@@ -8,7 +8,7 @@ our $VERSION = '0.01';
 
 =head1 NAME
 
-RT::Extension::CustomField::HideEmptyValues - don't custom fields without values
+RT::Extension::CustomField::HideEmptyValues - don't show custom fields without values
 
 =head1 DESCRIPTION
 

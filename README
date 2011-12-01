@@ -1,5 +1,5 @@
 NAME
-    RT::Extension::CustomField::HideEmptyValues - don't custom fields
+    RT::Extension::CustomField::HideEmptyValues - don't show custom fields
     without values
 
 DESCRIPTION
@@ -7,19 +7,23 @@ DESCRIPTION
     of Request Tracker when you view a ticket or another object.
 
 INSTALLATION
-    This extension works with RT 3.8 only.
+    perl Makefile.PL
+    make
+    make install
+        May need root permissions
 
-        # use RTHOME env if RT is not in the default location /opt/rt3
-        perl Makefile.PL
-        make
-        make install
+    Edit your /opt/rt4/etc/RT_SiteConfig.pm
+        Add this line:
 
-    Don't forget to enable plugin in the config.
+            Set(@Plugins, qw(RT::Extension::CustomField::HideEmptyValues));
 
-        Set( @Plugins,
-            ... other plugins ...
-            'RT::Extension::CustomField::HideEmptyValues',
-        );
+        or add "RT::Extension::CustomField::HideEmptyValues" to your
+        existing @Plugins line.
+
+    Clear your mason cache
+            rm -rf /opt/rt4/var/mason_data/obj
+
+    Restart your webserver
 
 AUTHOR
     Ruslan.Zakirov <ruz@bestpractical.com>

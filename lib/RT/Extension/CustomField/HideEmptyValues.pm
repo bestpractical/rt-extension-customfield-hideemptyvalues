@@ -4,7 +4,7 @@ use warnings;
 
 package RT::Extension::CustomField::HideEmptyValues;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 NAME
 
@@ -17,19 +17,31 @@ of Request Tracker when you view a ticket or another object.
 
 =head1 INSTALLATION
 
-This extension works with RT 3.8 only.
+=over
 
-    # use RTHOME env if RT is not in the default location /opt/rt3
-    perl Makefile.PL
-    make
-    make install
+=item perl Makefile.PL
 
-Don't forget to enable plugin in the config.
+=item make
 
-    Set( @Plugins,
-        ... other plugins ...
-        'RT::Extension::CustomField::HideEmptyValues',
-    );
+=item make install
+
+May need root permissions
+
+=item Edit your /opt/rt4/etc/RT_SiteConfig.pm
+
+Add this line:
+
+    Set(@Plugins, qw(RT::Extension::CustomField::HideEmptyValues));
+
+or add C<RT::Extension::CustomField::HideEmptyValues> to your existing C<@Plugins> line.
+
+=item Clear your mason cache
+
+    rm -rf /opt/rt4/var/mason_data/obj
+
+=item Restart your webserver
+
+=back
 
 =cut
 

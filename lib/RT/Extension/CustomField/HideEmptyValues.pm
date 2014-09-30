@@ -4,7 +4,7 @@ use warnings;
 
 package RT::Extension::CustomField::HideEmptyValues;
 
-our $VERSION = '0.02';
+our $VERSION = '1.00';
 
 =head1 NAME
 
@@ -19,17 +19,21 @@ of Request Tracker when you view a ticket or another object.
 
 =over
 
-=item perl Makefile.PL
+=item C<perl Makefile.PL>
 
-=item make
+=item C<make>
 
-=item make install
+=item C<make install>
 
 May need root permissions
 
-=item Edit your /opt/rt4/etc/RT_SiteConfig.pm
+=item Edit your F</opt/rt4/etc/RT_SiteConfig.pm>
 
-Add this line:
+If you are using RT 4.2 or greater, add this line:
+
+    Plugin('RT::Extension::CustomField::HideEmptyValues');
+
+For RT 4.0, add this line:
 
     Set(@Plugins, qw(RT::Extension::CustomField::HideEmptyValues));
 
@@ -43,16 +47,26 @@ or add C<RT::Extension::CustomField::HideEmptyValues> to your existing C<@Plugin
 
 =back
 
-=cut
-
-1;
-
 =head1 AUTHOR
 
-Ruslan.Zakirov E<lt>ruz@bestpractical.comE<gt>
+Best Practical Solutions, LLC E<lt>modules@bestpractical.comE<gt>
 
-=head1 LICENSE
+=head1 BUGS
 
-Under the same terms as perl itself.
+All bugs should be reported via email to
+
+    L<bug-RT-Extension-CustomField-HideEmptyValues@rt.cpan.org|mailto:bug-RT-Extension-CustomField-HideEmptyValues@rt.cpan.org>
+
+or via the web at
+
+    L<rt.cpan.org|http://rt.cpan.org/Public/Dist/Display.html?Name=RT-Extension-CustomField-HideEmptyValues>.
+
+=head1 LICENSE AND COPYRIGHT
+
+This software is Copyright (c) 2009-2014 by Best Pracical Solutions, LLC.
+
+This is free software, licensed under:
+
+  The GNU General Public License, Version 2, June 1991
 
 =cut

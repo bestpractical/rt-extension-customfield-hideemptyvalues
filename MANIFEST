@@ -1,5 +1,6 @@
 CHANGES
 html/Callbacks/CustomField-HideEmptyValues/Elements/ShowCustomFields/MassageCustomFields
+html/Callbacks/CustomField-HideEmptyValues/m/ticket/show/MassageCustomFields
 inc/Module/Install.pm
 inc/Module/Install/Base.pm
 inc/Module/Install/Can.pm
